@@ -1,0 +1,513 @@
+@import './_settings';
+@import 'foundation';
+
+@include foundation-everything($prototype: true);
+
+// here you write your own styles
+
+.todo-list-card {
+    background-color: white;
+    border-radius: $global-radius;
+    max-width: 300px;
+    font-family: Courier, monospace;
+  
+    .card-divider {
+      border-bottom: 2px solid $medium-gray;
+      background: #cfe5ff;
+      display: flex;
+      justify-content: space-between;
+      font-family: Courier, monospace;
+      h3 {
+        margin-bottom: 0;
+        font-family: Courier, monospace;
+        color: white;
+      }
+      font-family: Courier, monospace;
+      .close-button {
+        position: inherit;
+      }
+    }
+  
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      li {
+        background-color: $light-gray;
+        margin: 10px 0;
+        padding: 10px;
+        font-family: Courier, monospace;
+      }
+      input[type="checkbox"] {
+        position: absolute;
+        visibility: hidden;
+        left: -99999px;
+        font-family: Courier, monospace;
+      }
+      input[type="checkbox"] ~ label{
+        position: relative;
+        margin-left: 2rem;
+        font-family: Courier, monospace;
+      }
+      input[type="checkbox"] ~ label::after {
+        background: lightblue;
+        border: 1px solid $light-gray;
+        content: '';
+        display: block;
+        height: 20px;
+        left: -2rem;
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-80%);
+        font-family: Courier, monospace;
+      }
+      // Active state
+      input[type="checkbox"]:checked ~ label:after {
+        font-size: 18px;
+        font-family: Courier, monospace;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f00c";
+        color: $primary-color;
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+  
+  .mega-menu {
+    .dropdown-pane {
+      width: 100%;
+      max-width: 85rem;
+      margin: 0 auto !important;
+      left: 0% !important;
+      right: 0% !important;
+      font-family: Courier, monospace;
+    }
+  
+    .menu {
+      background: lightblue;
+      font-family: Courier, monospace;
+    }
+  
+    > a::after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 6px;
+      content: '';
+      border-bottom-width: 0;
+      border-top-style: solid;
+      border-color: lightblue transparent transparent;
+      margin-left: 10px;
+      margin-top: 11%;
+      font-family: Courier, monospace;
+    }
+  }
+
+  .button {
+    font-family: Courier, monospace;
+    color: white;
+    background-color: lightblue;
+  }
+
+    .text {
+        color: white;
+        font-family: Courier, monospace;
+
+    }
+
+
+    $testimonial-light-blue: rgba($primary-color, 0.25);
+$testimonial-block-vertical-bg: $testimonial-light-blue;
+
+
+.testimonial-block-vertical-quote {
+  background: $testimonial-block-vertical-bg;
+  padding: $global-padding;
+  border-radius: $global-radius;
+  margin-bottom: 1.875rem;
+  position: relative;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: '';
+    bottom: -1.25rem;
+    left: 2.25rem;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 1.25rem 1.125rem 0 1.125rem;
+    border-color: $testimonial-block-vertical-bg transparent transparent transparent;
+    position: absolute;
+  }
+}
+
+.testimonial-block-vertical-person {
+  display: flex;
+  margin-left: 1.65rem;
+  align-items: center;
+}
+
+.testimonial-block-vertical-avatar {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.testimonial-block-vertical-name {
+
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0.65rem;
+  font-family: Courier, monospace;
+}
+
+.testimonial-block-vertical-info {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: $dark-gray;
+  margin-bottom: 0;
+  margin-left: 0.65rem;
+  font-family: Courier, monospace;
+}
+
+.jarvis {
+    font-family: Courier, monospace;
+    color: white;
+    
+}
+
+.people-you-might-know {
+    background-color: $white;
+    padding: 1rem 0 0;
+    border: 1px solid $medium-gray;
+    box-shadow: 0 0 rem-calc(50) rgba(0,0,0, 0.18);
+  
+    .add-people-header {
+      padding: 0 0.9375rem;
+      border-bottom: 0.0625rem solid $medium-gray;
+  
+      .header-title {
+        font-weight: bold;
+      }
+    }
+  
+    .add-people-section {
+      margin: 1rem 0 0;
+      padding-bottom: 1rem;
+      border-bottom: 0.0625rem solid $medium-gray;
+  
+      .about-people {
+        display: flex;
+        align-items: flex-start;
+  
+        .about-people-avatar {
+          padding-right: 0.5rem;
+          padding-left: 0;
+  
+          .avatar-image {
+            width: rem-calc(80);
+            height: rem-calc(80);
+            border-radius: 50%;
+            border: 0.0625rem solid $medium-gray;
+          }
+        }
+  
+        .about-people-author {
+          flex: 1 0 0;
+  
+          .author-name {
+            color: $black;
+            font-family: Courier, monospace;
+            margin: 0.375rem 0 0;
+          }
+  
+          .author-location,
+          .author-mutual {
+            color: $dark-gray;
+            margin-bottom: 0;
+            font-size: 0.85em;
+            font-family: Courier, monospace;
+          }
+        }
+      }
+  
+      .add-friend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Courier, monospace;
+  
+        @include breakpoint(small only) {
+          justify-content: flex-start;
+        }
+  
+        .add-friend-action {
+          margin-top: 0.7rem;
+        }
+      }
+    }
+  
+    .view-more-people {
+      margin: .7rem 0;
+  
+      .view-more-text {
+        margin-bottom: 0;
+        text-align: center;
+  
+        .view-more-link {
+          color: $primary-color;
+  
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  
+.seperate {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.pieContainer {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.pieBackground{
+  background-color: #333;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  
+  -webkit-box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .75);      
+  box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .75);
+}
+
+.stat-circle-cover {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  
+  background-color: #333;
+  height: 80%;
+  width: 80%;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  
+  -moz-box-shadow:inset 0px 0px 5px #666;
+  -webkit-box-shadow:inset 0px 0px 5px #666;
+  box-shadow:inset 0px 0px 1px #666;
+}
+
+.stat-circle-cover span.stat-number {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  line-height: 80px;
+  color: #efefef;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  font-family: Helvetica-Neue, Helvetica, arial, verdana, sans-serif;
+  font-weight: bold;
+}
+
+.pie {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+
+.hold {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+
+#pieSlice25 .pie {
+  background-color: #56abe0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  
+  background-image: -webkit-linear-gradient(top, #62c4b9, #62c4b9);
+}
+
+#pieSlice50 .pie {
+  background-color:#8dc6d7;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  
+  
+}
+
+#pieSlice75_1 .pie {
+  background-color: #8dc6d7;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#pieSlice75_2 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+#pieSlice75_2 .pie {
+  background-color: #8dc6d7;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#pieSlice99_1 .pie {
+  background-color: lightblue;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#pieSlice99_2 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+#pieSlice99_2 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+#pieSlice99_2 .pie {
+  background-color: lightblue;
+  -webkit-transform: rotate(178deg);
+  -moz-transform: rotate(178deg);
+  -o-transform: rotate(178deg);
+  transform: rotate(178deg);
+  
+}
+
+
+
+body {
+    font-family:Courier, monospace;
+   }
+   
+   h4 {
+     color: rgb(109, 140, 179);
+     font-family:Courier, monospace;
+   }
+   
+   li {
+     list-style: none;
+   }
+   
+   // SASS Mixin to take percentage and modify
+   // Progress Bars width, color and text
+   
+   @mixin progressPercentage($progress){
+       div.progressBar div {
+           width: $progress;
+           background: rgb(100% - $progress, $progress, 50%);
+       }
+   
+       div.progressBar div:after {
+           content: "#{round($progress)}"
+       }
+       
+   }
+   
+   //Progress Bar Specific SASS
+   .progressBar{
+       width: 100%;
+       height: 0.75em;
+       border: 0.125em solid lightblue;
+       background: lightblue;
+       overflow:hidden;
+       @include border-radius(25px);
+   }
+   
+   .progressBar div {
+       display:block;
+       float: left;
+       height: 1em;
+   }
+   
+   .progressBar div::after {
+       display: block;
+       font-family: Helvetica, Arial, sans-serif;
+       color: #fff;
+       text-align:right;
+       padding: 0 0.75em;
+       font-size: 0.6rem;
+       line-height: 1.25;
+       font-weight:bold;
+   }
+   
+   
+   //SASS variables for each of the progress bars.
+   
+   .WEIGHT {
+   
+       $previous-weight: 305;
+       $goal-weight: 185;
+       $current-weight: 200;
+       $weight-progress: (($previous-weight - $current-weight) / ($previous-weight - $goal-weight)) * 100%;
+   
+       @include progressPercentage($weight-progress);
+   }
+   
+   .SIXPACKABS {
+       $number-of-abs: 6;
+       $current-number-of-visible-abs: 0;
+       $six-pack-abs-progress: $current-number-of-visible-abs / $number-of-abs * 100%;
+       @include progressPercentage($six-pack-abs-progress);
+   }
+   
+   .CSSLESSSASSCOMPASS {
+       $CSS-knowledge: 75%;
+       $LESS-knowledge: 50%;
+       $SASS-knowledge: 40%;
+       $COMPASS-knowledge: 40%;
+       $overall-CSS-LESS-SASS-COMPASS-progress: ($CSS-knowledge + $LESS-knowledge + $SASS-knowledge + $COMPASS-knowledge) / 4;
+       @include progressPercentage($overall-CSS-LESS-SASS-COMPASS-progress);
+       
+       
+   }
